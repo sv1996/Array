@@ -1,70 +1,66 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Leaders {
 
-	public static void main(String[] args) {
-		 Scanner s = new Scanner(System.in);
-		 int test=s.nextInt();
-		 while(test-->0)
-		 {
-		     int size= s.nextInt();
-		     int arr[] = new int[size];
-		     for(int i=0;i<size;i++)
-		     {
-		        arr[i] = s.nextInt(); 
-		         
-		         
-		         
-		         
-		     }
-		     
-		     
-		     
-		    leadersInArray(arr);
-		    System.out.println(); 
-		     
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int t = Integer.parseInt(br.readLine().trim());
+		while(t-->0){
+			    
+			   int n = Integer.parseInt(br.readLine().trim());
+			    int arr[] = new int[n];
+			   
+			    String inputLine[] = br.readLine().trim().split(" ");
+			    for(int i=0; i<n; i++){
+			        arr[i] = Integer.parseInt(inputLine[i]);
+			    }
+			   
+			  int maxelement=arr[n-1];
+			  StringBuilder sb = new   StringBuilder();
+		ArrayList<Integer> ar = new ArrayList<>();
+		
+			  
+			  for(int i=n-1;i>=0;i--)
+			  {
+				 if(arr[i]>=maxelement)
+				 {
+					 maxelement=arr[i];
+					 ar.add(maxelement);
+					 
+				 }
+				  
 		 }
+		for(int i=ar.size()-1;i>=0;i--)
+		{
+			sb.append(ar.get(i)+" ");
+		}
+			    
+		System.out.println(sb);	 
+			
+		}
 		 
 		 
-		 
-		 
-		 
+	}	 
 		 
 
 	}
 
-	private static void leadersInArray(int[] arr) {
-		// TODO Auto-generated method stub
-		   int max=Integer.MIN_VALUE;
-	        int count=0;
-	     int b[] = new int[count];
-	        for(int i=n-1;i>=0;i--)
-	        {
-	            if(arr[i]>=max)
-	            {
-	                max=arr[i];
-	                 b[i]=max;
-	               count++;
-	          //    System.out.print(max+" ");
-	            }
+ 
 	            
 	            
 	            
 	            
 	            
 	            
-	        }
-	         
-	        for(int i=count-1;i>0;i--)
-	        {
-	               System.out.print(b[i]+" ");
-	         }
-	}
-
+	   
 	 
 	            
 	            
 	            
 	       
 
-}
+ 
