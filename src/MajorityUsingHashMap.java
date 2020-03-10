@@ -1,3 +1,5 @@
+// first codes
+
 import java.util.Scanner;
 import java.util.HashMap; 
 
